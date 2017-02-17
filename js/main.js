@@ -2,7 +2,7 @@
     "use strict";
 
     ///////////////////////////////////////////////////// Your
-    var venueAddress = "Praca Ruy Barbosa, 104, Centro, Belo Horizonte";// Venue
+    var venueAddress = "Av. Raja Gabáglia, 3986, Cidade Jardim, Belo Horizonte";// Venue
     /////////////////////////////////////////////////// Adress
 
     var fn = {
