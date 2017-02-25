@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dados Baanko Challenge</title>
+    <link href="vendor/jquery-ui-1.12.1/jquery-ui.theme.min.css" rel="stylesheet">
+    <link href="vendor/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Latest compiled and minified CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="style.css" rel="stylesheet"/>
+
+    <script src="vendor/livejs.js"></script>
+    <script src="vendor/jquery-3.1.1.min.js"></script>
+    <script src="vendor/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD_pUyMvj1PDHZF6jCKNohP4fy0_1Mq3p8",
+        authDomain: "sol-lar-f6826.firebaseapp.com",
+        databaseURL: "https://sol-lar-f6826.firebaseio.com",
+        storageBucket: "sol-lar-f6826.appspot.com",
+        messagingSenderId: "895962531531"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+  </head>
+  <body>
+
+    <div id="tabs" class="col-sm-offset-1 col-sm-10">
+      <ul>
+        <li id="tabSample" hidden><a ref="#tabs-1">Mentores</a></li>
+      </ul>
+      <div class="add-campo-div">
+        <button type="button" class="btn btn-success">Add campo</button>
+      </div>
+      <div id="contentSample" id="tabs-1" hidden></div>
+    </div>
+
+
+
+    <!-- CONTENT SAMPLE -->
+    <div id="mediaSample" class="media" hidden>
+      <div class="media-left media-middle col-sm-2">
+        <img class="media-object img-responsive" src="https://cdn.pixabay.com/user/2015/01/20/20-56-42-330_250x250.jpg">
+      </div>
+      <div class="media-body">
+        <form id="formSample" class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Nome</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="nome" placeholder="Nome">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Data</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="data" placeholder="Data">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Arquivo ou URL</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="foto" placeholder="URL da foto">
+              <input type="file" class="form-control" name="upload" placeholder="Foto">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="facebook" class="col-sm-3 control-label">Facebook</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="facebook" placeholder="Facebook">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="likedin" class="col-sm-3 control-label">LinkedIn</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="likedin" placeholder="LinkedIn">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-5">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="exibir" checked> Exibir
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-5">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="line"></div>
+    </div>
+
+
+
+
+
+
+    <!-- <form id="formSample" class="form" hidden>
+      <input type="text" name="name" />
+      <input type="text" name="company" />
+      <input type="date" name="date" />
+      <input type="file" name="picture"/>
+      <input type="text" name="facebook" />
+      <input type="text" name="linkedin" />
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form> -->
+
+    <script src="index.js"></script>
+  </body>
+</html>
+
+
+
+
+
+    <!-- <div class="col-md-4 col-sm-6">
+			<div class="speaker">
+				<div class="speaker-info">
+					<div class="frame"> </div>
+					<div class="speaker-photo">
+						<img src="images/pitch/geral.jpg" alt="">
+					</div>
+					<div class="speaker-contacts">
+						<a target="_blank" href="https://www.facebook.com/" class="contact pull-left fa fa-facebook"></a>
+						<a target="_blank" href="https://br.linkedin.com/in/" class="contact pull-right fa fa-linkedin"></a>
+					</div>
+				</div>
+				<h3>Mini-oficina</h3>
+				<p>Empresa<br><i>18/03/2017</i></p>
+			</div>
+		</div> -->

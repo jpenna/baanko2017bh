@@ -1,0 +1,75 @@
+[
+  {
+    "geral": {
+      "imagesPath": "images",
+      "imagesMentores": "mentores",
+      "imagesOrganizadores": "organizadores",
+      "imagesPalestras": "paletras",
+      "imagesPitch": "pitch",
+      "logos": "logos"
+    }
+  },
+  {
+    "Mentores-Palestrantes": [
+      {
+        "nome": "Juliano Penna",
+        "empresa": "Robos.im",
+        "papel": "Palestrante",
+        "foto": "carlos_barreto.jpg",
+        "facebook": "facebook.com",
+        "linkedin": "linkedin.com"
+      }
+    ],
+    "Palestras e MiniCursos": [
+      {
+        "titulo": "Juliano Penna",
+        "subtitulo": "Robos.im",
+        "data": "23/04/17",
+        "foto": "carlos_barreto.jpg",
+        "facebook": "facebook.com",
+        "linkedin": "linkedin.com"
+      }
+    ],
+    "Banca": [
+      {
+        "titulo": "Juliano Penna",
+        "subtitulo": "Robos.im",
+        "data": "23/04/17",
+        "foto": "carlos_barreto.jpg",
+        "facebook": "facebook.com",
+        "linkedin": "linkedin.com"
+      }
+    ],
+    "Organizadores": [
+      {
+        "titulo": "Juliano Penna",
+        "subtitulo": "Robos.im",
+        "data": "23/04/17",
+        "foto": "carlos_barreto.jpg",
+        "facebook": "facebook.com",
+        "linkedin": "linkedin.com"
+      }
+    ],
+    "Patrocinio": [
+      {
+        "nome": "empresa",
+        "logo": "logo.jpg",
+        "link": "http://ads.com"
+      }
+    ],
+    "Parceiros": [
+      {
+        "nome": "empresa",
+        "logo": "logo.jpg",
+        "link": "http://ads.com"
+      }
+    ],
+    "Apoio": [
+      {
+        "nome": "empresa",
+        "logo": "logo.jpg",
+        "link": "http://ads.com"
+      }
+    ]
+  }
+]
