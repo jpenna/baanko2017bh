@@ -33,23 +33,23 @@
 
     <div id="tabs" class="col-sm-offset-1 col-sm-10">
       <ul>
-        <li id="tabSample" hidden><a ref="#tabs-1">Mentores</a></li>
+        <li id="tabTemplate" hidden><a ref="#tabs-1">Mentores</a></li>
       </ul>
       <div class="add-campo-div">
-        <button type="button" class="btn btn-success">Add campo</button>
+        <button id="addField" type="button" class="btn btn-success">Adicionar</button>
       </div>
-      <div id="contentSample" id="tabs-1" hidden></div>
+      <div id="contentTemplate" id="tabs-1" hidden></div>
     </div>
 
 
 
-    <!-- CONTENT SAMPLE -->
-    <div id="mediaSample" class="media" hidden>
-      <div class="media-left media-middle col-sm-2">
-        <img class="media-object img-responsive" src="https://cdn.pixabay.com/user/2015/01/20/20-56-42-330_250x250.jpg">
+    <!-- PERSON SAMPLE -->
+    <div id="personTemplate" class="media" hidden>
+      <div class="media-left media-middle col-sm-2 speaker-photo">
+        <img class="media-object avatar" src="/assets/image_placeholder.png">
       </div>
       <div class="media-body">
-        <form id="formSample" class="form-horizontal">
+        <form class="form-horizontal">
           <div class="form-group">
             <label class="col-sm-3 control-label">Nome</label>
             <div class="col-sm-5">
@@ -57,16 +57,15 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-3 control-label">Data</label>
+            <label class="col-sm-3 control-label">Empresa</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" name="data" placeholder="Data">
+              <input type="text" class="form-control" name="empresa" placeholder="Empresa">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-3 control-label">Arquivo ou URL</label>
+            <label class="col-sm-3 control-label">Foto</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" name="foto" placeholder="URL da foto">
-              <input type="file" class="form-control" name="upload" placeholder="Foto">
+              <input type="text" class="form-control" name="imagem" placeholder="URL da foto">
             </div>
           </div>
           <div class="form-group">
@@ -76,16 +75,22 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="likedin" class="col-sm-3 control-label">LinkedIn</label>
+            <label for="linkedin" class="col-sm-3 control-label">LinkedIn</label>
             <div class="col-sm-5">
-              <input type="text" class="form-control" name="likedin" placeholder="LinkedIn">
+              <input type="text" class="form-control" name="linkedin" placeholder="LinkedIn">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Data</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="data" placeholder="Data">
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-5">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" name="exibir" checked> Exibir
+                  <input type="checkbox" name="esconder"> Não exibir
                 </label>
               </div>
             </div>
@@ -101,41 +106,56 @@
     </div>
 
 
-
-
-
-
-    <!-- <form id="formSample" class="form" hidden>
-      <input type="text" name="name" />
-      <input type="text" name="company" />
-      <input type="date" name="date" />
-      <input type="file" name="picture"/>
-      <input type="text" name="facebook" />
-      <input type="text" name="linkedin" />
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form> -->
+    <!-- COMPANY SAMPLE -->
+    <div id="companyTemplate" class="media" hidden>
+      <div class="media-left media-middle col-sm-2">
+        <img class="media-object img-responsive" src="/assets/image_placeholder.png">
+      </div>
+      <div class="media-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Empresa</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="nome" placeholder="Empresa">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Logo</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="imagem" placeholder="URL da logo">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="linkedin" class="col-sm-3 control-label">LinkedIn</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="linkedin" placeholder="LinkedIn">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Data</label>
+            <div class="col-sm-5">
+              <input type="text" class="form-control" name="data" placeholder="Data">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-5">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="esconder"> Não exibir
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-5">
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="line"></div>
+    </div>
 
     <script src="index.js"></script>
   </body>
 </html>
-
-
-
-
-
-    <!-- <div class="col-md-4 col-sm-6">
-			<div class="speaker">
-				<div class="speaker-info">
-					<div class="frame"> </div>
-					<div class="speaker-photo">
-						<img src="images/pitch/geral.jpg" alt="">
-					</div>
-					<div class="speaker-contacts">
-						<a target="_blank" href="https://www.facebook.com/" class="contact pull-left fa fa-facebook"></a>
-						<a target="_blank" href="https://br.linkedin.com/in/" class="contact pull-right fa fa-linkedin"></a>
-					</div>
-				</div>
-				<h3>Mini-oficina</h3>
-				<p>Empresa<br><i>18/03/2017</i></p>
-			</div>
-		</div> -->

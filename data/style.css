@@ -8,3 +8,20 @@
   padding: 15px;
   padding-bottom: 0;
 }
+
+.speaker-photo {
+	width: 150%;
+	height: 150%;
+	max-width: 150px;
+	max-height: 150px;
+	border-radius: 50%;
+	border: 7px solid #efefef;
+	vertical-align: middle;
+	overflow: hidden;
+  padding-left: 0;
+}
+
+.speaker-photo img {
+	width: 150px;
+	height: 150px;
+}

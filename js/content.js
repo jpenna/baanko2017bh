@@ -1,19 +1,10 @@
-$(document).ready(() => {
-
+firebase.database().ref().once('value').then(function(snapshot) {
   const context = "bh2017";
   const keys = {};
   const companyGroups = ["Apoio", "Patrocinio", "Parceiros"];
 
-  $('#addField').on('click', () => {
-    const tabName = $('ul[role=tablist]').children('.ui-state-active').attr('aria-controls');
-    const name = tabName.substr(4);
-    addField($(`#${tabName}`), name);
-  });
-
-  function addField(tab, id, key, data) {
-    let template, image;
-
-    keys[id] = key || ++keys[id];
+  function addField(section, data) {
+    let template;
 
     if (companyGroups.indexOf(id) == -1) {
       template = $('#personTemplate');
@@ -40,24 +31,24 @@ $(document).ready(() => {
       .find('input[name=esconder]').attr('checked', data.esconder).end();
     }
 
-    const form = newTemplate.find('form');
-    form.attr('id', `form${id}${key}`);
-    form.on('submit', (e) => {
-      e.preventDefault();
-
-      var inputs = form.find('input');
-
-      var values = {};
-      inputs.each(function() {
-        values[this.name] = $(this).val();
-      });
-      values.esconder = form.find('input[name=esconder]').is(':checked');
-
-      const url = newTemplate.find('input[name=imagem]').val();
-      newTemplate.find('img').attr('src', url);
-
-      return firebase.database().ref(`/1/${id}/${key}`).set(values);
-    });
+    // const form = newTemplate.find('form');
+    // form.attr('id', `form${id}${key}`);
+    // form.on('submit', (e) => {
+    //   e.preventDefault();
+    //
+    //   var inputs = form.find('input');
+    //
+    //   var values = {};
+    //   inputs.each(function() {
+    //     values[this.name] = $(this).val();
+    //   });
+    //   values.esconder = form.find('input[name=esconder]').is(':checked');
+    //
+    //   const url = newTemplate.find('input[name=imagem]').val();
+    //   newTemplate.find('img').attr('src', url);
+    //
+    //   return firebase.database().ref(`/1/${id}/${key}`).set(values);
+    // });
   }
 
   firebase.database().ref().once('value').then(function(snapshot) {
@@ -108,3 +99,5 @@ $(document).ready(() => {
   });
 
 });
+
+}
