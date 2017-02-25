@@ -10,6 +10,10 @@ $(document).ready(() => {
     addField($(`#${tabName}`), name);
   });
 
+  $(document).on('change', 'input', function () {
+    $(this).addClass('input-changed');
+  });
+
   function addField(tab, id, key, data) {
     let template, image;
 
@@ -47,6 +51,8 @@ $(document).ready(() => {
 
       var inputs = form.find('input');
 
+      inputs.removeClass('input-changed');
+
       var values = {};
       inputs.each(function() {
         values[this.name] = $(this).val();
@@ -56,7 +62,7 @@ $(document).ready(() => {
       const url = newTemplate.find('input[name=imagem]').val();
       newTemplate.find('img').attr('src', url);
 
-      return firebase.database().ref(`/1/${id}/${key}`).set(values);
+      firebase.database().ref(`/1/${id}/${key}`).set(values);
     });
   }
 

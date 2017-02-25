@@ -19,6 +19,18 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Belgrano' rel='stylesheet' type='text/css'>
 
+	<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+	<script>
+	// Initialize Firebase
+	var config = {
+		apiKey: "AIzaSyD_pUyMvj1PDHZF6jCKNohP4fy0_1Mq3p8",
+		authDomain: "sol-lar-f6826.firebaseapp.com",
+		databaseURL: "https://sol-lar-f6826.firebaseio.com",
+		storageBucket: "sol-lar-f6826.appspot.com",
+		messagingSenderId: "895962531531"
+	};
+	firebase.initializeApp(config);
+	</script>
 </head>
 
 <body>
@@ -111,15 +123,15 @@
 
 		<ul class="slides">
 
-			<li><img src="images/demo/beaga-mar/bh01.jpg" alt="Eventos de Startups na capital mineira"/></li>
+			<li><img src="images/demo/bg-beaga1.jpg" alt="Potencialize seu Negócio"/></li>
 
-			<li><img src="images/demo/beaga-mar/bh02.jpg" alt="Participe e amplie seu Networking"/></li>
+			<li><img src="images/demo/bg-beaga2.jpg" alt="Patrocine ou apoie este evento"/></li>
 
-			<li><img src="images/demo/beaga-mar/bh03.jpg" alt="Seja nosso palestrante e venha trocar experiências"/></li>
+			<li><img src="images/demo/bg-beaga3.jpg" alt="Participe e amplie seu Networking"/></li>
 
-			<li><img src="images/demo/beaga-mar/bh04.jpg" alt="Potencialize seu Negócio"/></li>
+			<li><img src="images/demo/bg-beaga4.jpg" alt="Seja nosso palestrante e venha trocar experiências"/></li>
 
-			<li><img src="images/demo/beaga-mar/bh05.jpg" alt="Patrocine ou apoie este evento"/></li>
+			<li><img src="images/demo/bg-beaga5.jpg" alt="Eventos de Startups na capital mineira"/></li>
 
 
 
@@ -753,14 +765,15 @@
 <!--== Palestras e Mini-Cursos ====-->
 <!--===============================-->
 
-<!-- <section id="palestras" class="row separated"> -->
-<section id="palestras" class="row">
+<section id="palestras" class="row separated">
 	<div class="section-header text-right">
 		<h2>Palestras e Mini-Cursos</h2>
 		<h4>Capacitação durante o Desafio!</h4>
 	</div>
-	<div class="row">
-		<div class="col-md-4 col-sm-6">
+
+	<div id="Palestras-MiniCursosSection" class="row">
+
+		<div id="Palestras-MiniCursosTemplate" class="col-md-4 col-sm-6" hidden>
 			<div class="speaker">
 				<div class="speaker-info">
 					<div class="frame"> </div>
@@ -772,64 +785,12 @@
 						<a target="_blank" href="https://br.linkedin.com/in/" class="contact pull-right fa fa-linkedin"></a>
 					</div>
 				</div>
-				<h3>Palestrante</h3>
-				<p>Nome<br><i>18/03/2017</i></p>
+				<h3></h3>
+				<p style="margin-bottom:0"></p>
+				<i style="margin-bottom: 10px"></i>
 			</div>
 		</div>
 
-		<div class="col-md-4 col-sm-6">
-			<div class="speaker">
-				<div class="speaker-info">
-					<div class="frame"> </div>
-					<div class="speaker-photo">
-						<img src="images/mentores/agatha_martins.jpg" alt="Agatha Martins">
-					</div>
-					<div class="speaker-contacts">
-						<a target="_blank" href="https://www.facebook.com/" class="contact pull-left fa fa-facebook"></a>
-						<a target="_blank" href="https://br.linkedin.com/in/" class="contact pull-right fa fa-linkedin"></a>
-					</div>
-				</div>
-				<h3>Agatha Martins</h3>
-				<p>Empresa<br><i>18/03/2017</i></p>
-			</div>
-		</div>
-
-
-
-
-		<div class="col-md-4 col-sm-6">
-			<div class="speaker">
-				<div class="speaker-info">
-					<div class="frame"> </div>
-					<div class="speaker-photo">
-						<img src="images/logos/geral.png" alt="">
-					</div>
-					<div class="speaker-contacts">
-						<a target="_blank" href="" class="contact pull-left fa fa-facebook"></a>
-						<a target="_blank" href="" class="contact pull-right fa fa-linkedin"></a>
-					</div>
-				</div>
-				<h3>Palestra</h3>
-				<p>Nome<br><i>08/04/2017</i></p>
-			</div>
-		</div>
-		<div class="col-md-4 col-sm-6">
-			<div class="speaker">
-				<div class="speaker-info">
-					<div class="frame"> </div>
-					<div class="speaker-photo">
-						<img src="images/palestras/geral.png" alt="">
-					</div>
-					<div class="speaker-contacts">
-						<a target="_blank" href="https://www.facebook.com/" class="contact pull-left fa fa-facebook"></a>
-						<a target="_blank" href="" class="contact pull-right fa fa-linkedin"></a>
-					</div>
-				</div>
-				<h3>Mini-Oficina</h3>
-				<p>Empresa<br><i>08/04/2017</i></p>
-			</div>
-		</div>
-	</div> -->
 </section>
 <!--==========-->
 
@@ -838,13 +799,15 @@
 <!--== Mentores ===================-->
 <!--===============================-->
 
-				<!-- <section id="pitch" class="row separated">
-						<div class="section-header text-right">
-							<h2>Conheça alguns dos mentores e palestrantes</h2>
-							<h4>que irão ajudar os grupos a se desenvolverem</h4>
-						</div>
+<section id="pitch" class="row separated">
+	<div class="section-header text-right">
+		<h2>Conheça alguns dos mentores e palestrantes</h2>
+		<h4>que irão ajudar os grupos a se desenvolverem</h4>
+	</div>
 
-	<div class="col-md-4 col-sm-6">
+	<div id="Mentores-PalestrantesSection"></div>
+
+	<div id="Mentores-PalestrantesTemplate" class="col-md-4 col-sm-6" hidden>
 		<div class="speaker">
 			<div class="speaker-info">
 				<div class="frame"> </div>
@@ -856,30 +819,14 @@
 					<a target="_blank" href="https://br.linkedin.com/in/" class="contact pull-right fa fa-linkedin"></a>
 				</div>
 			</div>
-			<h3>Nome</h3>
-			<p>Empresa<br><i>Mentor</i></p>
+			<h3></h3>
+			<p style="margin-bottom:0"></p>
+			<i style="margin-bottom: 10px"></i>
 		</div>
 	</div>
 
-	<div class="col-md-4 col-sm-6">
-		<div class="speaker">
-			<div class="speaker-info">
-				<div class="frame"> </div>
-				<div class="speaker-photo">
-					<img src="images/pitch/geral.jpg" alt="">
-				</div>
-				<div class="speaker-contacts">
-					<a target="_blank" href="https://www.facebook.com/" class="contact pull-left fa fa-facebook"></a>
-					<a target="_blank" href="https://br.linkedin.com/in/" class="contact pull-right fa fa-linkedin"></a>
-				</div>
-			</div>
-			<h3>Nome</h3>
-			<p>Empresa<br><i>Palestrante</i></p>
-		</div>
-	</div>
-
-				</section> -->
-				<!--==========-->
+</section>
+<!--==========-->
 
 
 
@@ -888,13 +835,16 @@
 <!--== Banca do Pitch =============-->
 <!--===============================-->
 
-				<!-- <section id="pitch" class="row separated">
+<section id="pitch" class="row separated">
 
 	<div class="section-header text-right">
 		<h2>Nossa Banca Avaliadora!</h2>
 		<h4>Obrigado a todos parceiros.</h4>
 	</div>
-	<div class="col-md-4 col-sm-6">
+
+	<div id="BancaSection"></div>
+
+	<div id="BancaTemplate" class="col-md-4 col-sm-6" hidden>
 		<div class="speaker">
 			<div class="speaker-info">
 				<div class="frame"> </div>
@@ -906,418 +856,336 @@
 					<a target="_blank" href="https://www.linkedin.com/in/" class="contact pull-right fa fa-linkedin"></a>
 				</div>
 			</div>
-			<h3>Nome</h3>
-			<p>Empresa<br><i>Data</i></p>
+			<h3></h3>
+			<p style="margin-bottom:0"></p>
+			<i style="margin-bottom: 10px"></i>
 		</div>
 	</div>
 
-					<div class="col-md-4 col-sm-6">
-						<div class="speaker">
-							<div class="speaker-info">
-								<div class="frame"> </div>
-								<div class="speaker-photo">
-									<img src="images/demo/speakers/marcio_rabelo.jpg" alt="Márcio Rabelo">
-								</div>
-								<div class="speaker-contacts">
-									<a target="_blank" href="https://www.facebook.com/marcio.rabelo.39" class="contact pull-left fa fa-facebook"></a>
-									<a target="_blank" href="https://br.linkedin.com/in/m%C3%A1rcio-rabelo-97532313/pt" class="contact pull-right fa fa-linkedin"></a>
-								</div>
-							</div>
-							<h3>Márcio Rabelo</h3>
-							<p>Fundação Dom Cabral<br></p>
-						</div>
+
+</section>
+<!--==========-->
+
+
+
+
+
+
+<!--===============================-->
+<!--== Organizadores ==============-->
+<!--===============================-->
+
+<section id="organizadores" class="row separated">
+
+	<div class="section-header text-right">
+		<h2>Os responsáveis pela realização em Beagá</h2>
+		<h4>Quer levar pra sua cidade? Saiba como em challenge@baanko.com</h4>
+	</div>
+
+	<div id="OrganizadoresSection"></div>
+
+	<div id="OrganizadoresTemplate" class="col-md-4 col-sm-6" hidden>
+		<div class="speaker">
+			<div class="speaker-info">
+				<div class="frame"> </div>
+				<div class="speaker-photo">
+					<img src="" alt="">
+				</div>
+				<div class="speaker-contacts">
+					<a target="_blank" href="https://www.facebook.com/" class="contact pull-left fa fa-facebook"></a>
+					<a target="_blank" href="https://br.linkedin.com/in/" class="contact pull-right fa fa-linkedin"></a>
+				</div>
+			</div>
+			<h3>Nome</h3>
+			<p>Empresa</p>
+			<i style="margin-bottom: 10px"></i>
+		</div>
+	</div>
+
+
+
+</section>
+<!--==========-->
+
+
+
+<!--===============================-->
+<!--== Inscrições =================-->
+<!--===============================-->
+
+<section id="inscricoes" class="row">
+
+	<div class="col-sm-12">
+
+		<div class="section-header text-center">
+
+			<h2>Inscrições</h2>
+			<h4>Selecione como quer se inscrever para participar do Baanko Challenge Beagá, lembrando que estão abertas até <font color=#D50000><b>10/03/2017 <!-- <font color=red><b>Inscrições Encerradas</b></font>--> </h4>
+			<br><br>
+
+			<h4>
+
+				<font size=6><b>
+					<a target="_blank" href="http://baanko.com">Quero participar ou inscrever minha ideia ou projeto de impacto<br><br>CLIQUE AQUI</a></b><br>
+				</font><br>
+				<font size=2><i>OBS.: Ao se increver você confirma que tem disponibilidade de participar ativamente de 3 semanas de imersão entre 18 de Março e 08 de Abril de 2017, <a href="editalbeaga2017.pdf" target="new2">leia o edital antes de se inscrever para conhecer as regras AQUI</a>. Se tem interesse em ser voluntário na organização ou levar seu artesanato ou intervenção cultural para o evento, envie um email para <a href="mailto:challenge.beaga@baanko.com?subject=[Site] Quero ser voluntário ou intervenção cultural">challenge.beaga@baanko.com</a>.</font></i>
+
+
+			</font>
+			<br><br>
+
+		</h4>
+	</div>
+</div>
+
+</section>
+<!--==========-->
+
+
+<!--===============================-->
+<!--== Parceiros ==================-->
+<!--===============================-->
+
+<section id="parceiros" class="row">
+
+	<div class="col-sm-12">
+
+		<div class="section-header text-center">
+
+
+
+			<h2>Patrocínio</h2>
+			<h4>Seja um patrocinador - <a target="_blank"4 href="parceriabaanko.pdf">Proposta de Parceria</a></h4>
+			<br><br>
+
+			<div id="PatrocinioSection"></div>
+
+			<!-- <a target="_blank" href="http://centoequatro.org"><img src="images/logos/104.jpg" alt="Espaço 104" width="300px"></a> -->
+			<a id="PatrocinioTemplate" target="_blank" href="" hidden>
+				<img src="" alt="" width="300px" style="margin: 30px">
+			</a>
+
+
+
+
+			<a target="_blank" href="parceriabaanko.pdf">
+				<img src="images/demo/partners/logo-04.png" alt="Inclua seu negócio aqui!"></a>
+				<br><br><br><br>
+
+				<h2>Parceiros</h2>
+				<h4>Veja quem está com a gente na realização</h4>
+
+				<br><br>
+
+				<div id="ParceirosSection"></div>
+
+
+				<a id="ParceirosTemplate" target="_blank" href="" hidden><img src="" alt="" width="225"></a>
+
+				<br><br>
+				<br><br>
+
+				<h2>Apoio</h2>
+				<h4>Veja quem apoia essa ideia, <a target="_blank" href="parceriabaanko.pdf">coloque aqui sua marca.</a></h4>
+				<br><br>
+
+				<div id="ApoioSection"></div>
+
+				<!-- <div class="row"> -->
+				<a id="ApoioTemplate" target="_blank" href="" hidden>
+					<img style="margin:10px" src="" alt="" width="150">
+				</a>
+				<!-- </div> -->
+				<!-- <div class="row">
+				<a target="_blank" href="http://www.redecidada.org.br/">
+				<img style="margin:10px" src="images/logos/redecidada.png" alt="Rede Cidadã" width="150">
+			</a>
+			<a target="_blank" href="http://get.beerorcoffee.com/invite/">
+			<img style="margin:10px" src="images/logos/beer.png" alt="BeerOrCoffee" width="150">
+		</a>
+		<a target="_blank" href="http://tioflavio.com/">
+		<img style="margin:10px" src="images/logos/tioflaviocultural.png" alt="Tio Flávio Cultural" width="150">
+	</a>
+	<a target="_blank" href="http://www.designthinkersgroup.com/">
+	<img style="margin:10px" src="images/logos/dt_group.png" alt="Design Thinkers Group" width="150">
+</a>
+</div>
+<div class="row">
+<a target="_blank" href="http://www.fundamig.org.br/">
+<img style="margin: 10px" src="images/logos/fundamig.jpg" alt="Fundamig" width="150">
+</a>
+<a target="_blank" href="http://www.pickmeapp.com.br/">
+<img style="margin: 10px" src="images/logos/pickmeapp.png" alt="PickMeApp" width="150">
+</a>
+<a target="_blank" href="https://www.facebook.com/mulheresquedecidemoficial/">
+<img style="margin: 10px" src="images/logos/mulheresquedecidem.png" alt="Mulheres que Decidem" width="150">
+</a>
+<a target="_blank" href="http://www.take.net/">
+<img style="margin: 10px" src="images/logos/takenet.jpg" alt="Takenet" width="150">
+</a>
+</div>
+<div class="row">
+<a target="_blank" href="http://www.fumsoft.org.br/">
+<img style="margin: 10px" src="images/logos/fumsoft.png" alt="Fumsoft" width="150">
+</a>
+<a target="_blank" href="http://www.fumsoft.org.br/empreendedorismo/acelera-mg">
+<img style="margin: 10px" src="images/logos/mgti.png" alt="MGTI" width="150">
+</a>
+<a target="_blank" href="http://www.simi.org.br/">
+<img style="margin: 10px" src="images/logos/simi.png" alt="Simi" width="150">
+</a>
+<a target="_blank" href="http://www.cemais.org.br/">
+<img style="margin: 10px" src="images/logos/cemais.jpg" alt="CeMais" width="150">
+</a>
+</div>
+<div class="row">
+<a target="_blank" href="http://efgbh.com.br/">
+<img style="margin: 10px" src="images/logos/sebrae.png" alt="Escola Sebrae" width="150">
+</a>
+<a target="_blank" href="http://www.risu.com.br/">
+<img style="margin: 10px" src="images/logos/risu.png" alt="Risü" width="150">
+</a>
+<a target="_blank" href="http://virturian.com/">
+<img style="margin: 10px" src="images/logos/virturian.jpg" alt="Virturian" width="150">
+</a>
+<a target="_blank" href="http://www.grecodesign.com.br/">
+<img style="margin: 10px" src="images/logos/greco_design.png" alt="Greco Design" width="150">
+</a>
+</div>
+<div class="row">
+<a target="_blank" href="parceriabaanko.pdf"><img src="images/demo/partners/logo-04.png" alt="Inclua seu negócio aqui!" width="150"></a>
+</div> -->
+</div>
+</section>
+<!--==========-->
+
+
+
+<!--===============================-->
+<!--== Contato ====================-->
+<!--===============================-->
+
+<section id="contato" class="row">
+	<div class="col-sm-12">
+		<div class="section-header text-center">
+			<h2>Entre em contato com a gente</h2>
+			<br>
+			<h4>Dúvidas sobre Baanko Challenge Beagá? <a href="mailto:challenge.beaga@baanko.com?subject=[Site] Dúvidas Baanko Challenge Beagá">challenge.beaga@baanko.com</a></h4>
+			<br>
+			<h4>Quer levar o Baanko Challenge para sua cidade? <a href="mailto:challenge@baanko.com?subject=[Site] Quero fazer um Baanko Challenge na minha cidade">challenge@baanko.com</a></h4>
+		</div>
+
+	</div>
+</section>
+
+<!--==========-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="gotop" class="gotop fa fa-arrow-up"></div>
+
+</div>
+
+</div>
+
+<footer id="footer">
+
+	<div id="map_canvas"></div>
+
+
+	<div class="footer">
+
+		<div class="container box">
+
+
+			<section id="info" class="row">
+
+				<div class="col-sm-8">
+
+
+					<!--== Social Icons ==-->
+
+					<ul class="social-icons">
+
+						<li><a href="http://www.facebook.com/baankochallenge" class="fa fa-facebook"></a></li>
+
+						<li><a href="http://www.twitter.com/BaankoGroup" class="fa fa-twitter"></a></li>
+
+						<li><a href="https://plus.google.com/u/0/b/109869411851450088329/109869411851450088329/about" class="fa fa-google-plus"></a></li>
+
+						<li><a href="http://www.youtube.com/user/BaankoGroup" class="fa fa-youtube"></a></li>
+
+						<li><a href="http://instagram.com/baanko" class="fa fa-instagram"></a></li>
+
+						<!--<li><a href="#" class="fa fa-pinterest"></a></li>-->
+
+						<li><a href="http://www.linkedin.com/company/grupo-baanko" class="fa fa-linkedin"></a></li>
+
+					</ul>
+
+
+				</div>
+
+				<div class="col-sm-4 text-right">
+
+					<div class="copyrights">
+
+						All Rights Reserved. © 2014
+
 					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="speaker">
-							<div class=c="images/demo/speakers/andre_gabriel.jpg" alt="André Gabriel">
-								</div>
-								<div class="speaker-contacts">
-									<a target="_blank" href="https://www.facebook.com/andrepvg" class="contact pull-left fa fa-facebook"></a>
-									<a target="_blank" href="https://br.linkedin.com/in/andr%C3%A9-gabriel-0a26517" class="contact pull-right fa fa-linkedin"></a>
-								</div>
-							</div>
-							<h3>André Gabriel</h3>
-							<p>Eficácia Farmácia de Manipulação<br></p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="speaker">
-							<div class="speaker-info">
-								<div class="frame"> </div>
-								<div class="speaker-photo">
-									<img src="images/demo/speakers/lucas_verissimo.jpg" alt="Lucas Veríssimo">
 
-				</section>"speaker-info">
-								<div class="frame"> </div>
-								<div class="speaker-photo">
-									<img src="images/demo/speakers/andre_gabriel.jpg" alt="André Gabriel">
-								</div>
-								<div class="speaker-contacts">
-									<a target="_blank" href="https://www.facebook.com/andrepvg" class="contact pull-left fa fa-facebook"></a>
-									<a target="_blank" href="https://br.linkedin.com/in/andr%C3%A9-gabriel-0a26517" class="contact pull-right fa fa-linkedin"></a>
-								</div>
-							</div>
-							<h3>André Gabriel</h3>
-							<p>Eficácia Farmácia de Manipulação<br></p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-6">
-						<div class="speaker">
-							<div class="speaker-info">
-								<div class="frame"> </div>
-								<div class="speaker-photo">
-									<img src="images/demo/speakers/lucas_verissimo.jpg" alt="Lucas Veríssimo">
-
-				</section> -->
-				<!--==========-->
-
-
-
-
-
-
-				<!--===============================-->
-				<!--== Organizadores ==============-->
-				<!--===============================-->
-
-				<!-- <section id="organizadores" class="row separated">
-
-					<div class="section-header text-right">
-						<h2>Os responsáveis pela realização em Beagá</h2>
-						<h4>Quer levar pra sua cidade? Saiba como em challenge@baanko.com</h4>
-					</div>
-
-					<div class="col-md-4 col-sm-6">
-						<div class="speaker">
-							<div class="speaker-info">
-								<div class="frame"> </div>
-								<div class="speaker-photo">
-									<img src="images/organizadores/geral.jpg" alt="">
-								</div>
-								<div class="speaker-contacts">
-									<a target="_blank" href="https://www.facebook.com/" class="contact pull-left fa fa-facebook"></a>
-									<a target="_blank" href="https://br.linkedin.com/in/" class="contact pull-right fa fa-linkedin"></a>
-								</div>
-							</div>
-							<h3>Nome</h3>
-							<p>Empresa</p>
-						</div>
-					</div>
-
-
-
-				</section> -->
-				<!--==========-->
-
-
-
-				<!--===============================-->
-				<!--== Inscrições =================-->
-				<!--===============================-->
-
-				<section id="inscricoes" class="row">
-
-					<div class="col-sm-12">
-
-						<div class="section-header text-center">
-
-							<h2>Inscrições</h2>
-							<h4>Selecione como quer se inscrever para participar do Baanko Challenge Beagá, lembrando que estão abertas até <font color=#D50000><b>10/03/2017 <!-- <font color=red><b>Inscrições Encerradas</b></font>--> </h4>
-							<br><br>
-
-							<h4>
-
-								<font size=6><b>
-									<a target="_blank" href="http://baanko.com">Quero participar ou inscrever minha ideia ou projeto de impacto<br><br>CLIQUE AQUI</a></b><br>
-								</font><br>
-								<font size=2><i>OBS.: Ao se increver você confirma que tem disponibilidade de participar ativamente de 3 semanas de imersão entre 18 de Março e 08 de Abril de 2017, <a href="editalbeaga2017.pdf" target="new2">leia o edital antes de se inscrever para conhecer as regras AQUI</a>. Se tem interesse em ser voluntário na organização ou levar seu artesanato ou intervenção cultural para o evento, envie um email para <a href="mailto:challenge.beaga@baanko.com?subject=[Site] Quero ser voluntário ou intervenção cultural">challenge.beaga@baanko.com</a>.</font></i>
-
-
-							</font>
-							<br><br>
-
-						</h4>
-					</div>
 				</div>
 
 			</section>
-			<!--==========-->
-
-
-			<!--===============================-->
-			<!--== Parceiros ==================-->
-			<!--===============================-->
-
-			<section id="parceiros" class="row">
-
-				<div class="col-sm-12">
-
-					<div class="section-header text-center">
-
-
-
-							<h2>Patrocínio</h2>
-							<h4>Seja um patrocinador - <a target="_blank"4 href="parceriabaanko.pdf">Proposta de Parceria</a></h4>
-<!-- <br><br> -->
-							<!-- <a target="_blank" href="http://centoequatro.org"><img src="images/logos/104.jpg" alt="Espaço 104" width="300px"></a> -->
-							<!-- <a target="_blank" href="http://centoequatro.org">
-								<img src="images/logos/centoequatro.png" alt="CentoeQuatro" width="300px" style="margin: 30px"></a>
-							<a target="_blank" href="http://butec.com.br">
-								<img src="images/logos/butec.png" alt="Butec" width="300px" style="margin: 30px"></a>
-							<br>
-							<a target="_blank" href="http://jbleopoldino.com.br">
-								<img src="images/logos/jbadvocacia.png" alt="João Bosco Leopoldino Advocacia" width="300px" style="margin: 30px"></a>
-							<a target="_blank" href="http://pris.com.br/">
-								<img src="images/logos/pris.jpg" alt="PRIS" width="300px" style="margin: 30px"></a>
-							<br>
-							<a target="_blank" href="parceriabaanko.pdf">
-								<img src="images/demo/partners/logo-04.png" alt="Inclua seu negócio aqui!"></a> -->
-							<br><br><br><br>
-
-											<h2>Parceiros</h2>
-											<h4>Veja quem está com a gente na realização</h4>
-
-<!--
-<br><br>
-
-							<a target="_blank" href="http://www.auroracomunicacao.com.br/"><img src="images/logos/aurora.png" alt="Aurora Comunicação" width="225"></a>
-							<a target="_blank" href="https://onride.com.br/"><img src="images/logos/onride.png" alt="OnRide - Caronas Sociais" width="225"></a>
-							<a target="_blank" href="http://melocampos.com.br/"><img src="images/logos/melocampos.png" alt="Melo Campos" width="225"></a>
-							<a target="_blank" href="https://br.linkedin.com/in/aline-prado-b6533b38"><img src="images/logos/alineprado.jpg" alt="Assessoria de Imprensa Aline Prado" width="225"></a>
-<br><br>
-							<a target="_blank" href="http://www.sympla.com.br/"><img src="images/logos/sympla.png" alt="Sympla" width="225"></a>
-							<a target="_blank" href="http://www.troposlab.com/"><img src="images/logos/tropos2.png" alt="TroposLab" width="225"></a>
-							<a target="_blank" href="http://www.ibmec.br/"><img src="images/logos/ibmec.png" alt="Ibmec" width="225"></a>
-							<a target="_blank" href="http://techmallsa.com.br/"><img src="images/logos/techmall.png" alt="Techmall" width="225"></a>
-<br><br>
-							<a target="_blank" href="http://www.jchebly.com.br/"><img src="images/logos/jchebly.jpg" alt="JChebly" width="225"></a>
-							<a target="_blank" href="http://www.arvoredecomunicacao.com.br/"><img src="images/logos/arvore3.png" alt="Árvore de Comunicação" width="225"></a>
-							<a target="_blank" href="http://www.labdance.com.br/"><img src="images/logos/labdance.png" alt="LabDance" width="225"></a>
-							<a target="_blank" href="http://www.nhksustentabilidade.com.br/"><img src="images/logos/nhk.png" alt="nhk Sustentabilidade" width="225"></a>
-<br><br>
-							<a target="_blank" href="http://animatto.com.br/"><img src="images/logos/animatto.png" alt="Animatto" width="225"></a>
-							<a target="_blank" href="http://www.pillow.ac/"><img src="images/logos/pillow.png" alt="Pillow" width="225"></a>
-							<a target="_blank" href="http://aiesec.org.br/"><img src="images/logos/aiesec.png" alt="AIESEC" width="225"></a>
-							<a target="_blank" href="http://serparte.org.br/"><img src="images/logos/serparte.jpg" alt="Ser Parte" width="225"></a>
-<br><br>
-							<a target="_blank" href="http://www.ecomobilidesign.com.br/"><img src="images/logos/ecomobili.jpg" alt="Ecomobili" width="225"></a>
-							<a target="_blank" href="http://www.tecnologia.mg.gov.br/"><img src="images/logos/sectes.png" alt="Secretária de Ciência e Tecnologia do Estado - Sectes" width="225"></a>
-							<a target="_blank" href="http://www.smartalk.com.br/"><img src="images/logos/smartalk.png" alt="Smartalk apresentações de impacto" width="223" style="margin:20px"></a>
-							<a target="_blank" href="http://ideiaclara.com"><img src="images/logos/ideiaclara.png" alt="Ideia Clara" width="225" style="margin:20px"></a>
-							<a target="_blank" href="http://educacaoharmonica.com.br/"><img src="images/logos/educacao_harmonica.png" alt="Educação Harmonica" width="150" style="margin:20px"></a>
-							<a target="_blank" href="https://www.perestroika.com.br/"><img src="images/logos/perestroika.png" alt="Perestroika" width="200" style="margin:20px"></a>
-							<a target="_blank" href="https://www.amadoria.com.br/"><img src="images/logos/amadoria.png" alt="Amadoria" width="200" style="margin:20px"></a>
-							<a target="_blank" href="https://www.chuveiro.art.br/"><img src="images/logos/chuveiro.png" alt="Chuveiro Estúdo Criativo" width="225" style="margin:20px"></a> -->
-
-											<br><br>
-											<br><br>
-
-							<h2>Apoio</h2>
-							<h4>Veja quem apoia essa ideia, <a target="_blank" href="parceriabaanko.pdf">coloque aqui sua marca.</a></h4>
-							<br><br>
-							<!-- <div class="row">
-								<a target="_blank" href="http://www.sitawi.net/">
-									<img style="margin:10px" src="images/logos/sitawi.png" alt="Sitawi - Finanças do Bem" width="150">
-								</a>
-								<a target="_blank" href="http://www.sebrae.com.br/sites/PortalSebrae">
-									<img style="margin:10px" src="images/logos/sebrae.jpg" alt="Sebrae" width="150">
-								</a>
-								<a target="_blank" href="http://dialogogestao.com.br/">
-									<img style="margin:10px" src="images/logos/dialogo.jpg" alt="Diálogo Gestão" width="150">
-								</a>
-								<a target="_blank" href="http://amaresimples.com.br/">
-									<img style="margin:10px" src="images/logos/amaresimples.png" alt="Amar é Simples" width="150">
-								</a>
-							</div>
-							<div class="row">
-								<a target="_blank" href="http://www.redecidada.org.br/">
-									<img style="margin:10px" src="images/logos/redecidada.png" alt="Rede Cidadã" width="150">
-								</a>
-								<a target="_blank" href="http://get.beerorcoffee.com/invite/">
-									<img style="margin:10px" src="images/logos/beer.png" alt="BeerOrCoffee" width="150">
-								</a>
-								<a target="_blank" href="http://tioflavio.com/">
-									<img style="margin:10px" src="images/logos/tioflaviocultural.png" alt="Tio Flávio Cultural" width="150">
-								</a>
-								<a target="_blank" href="http://www.designthinkersgroup.com/">
-									<img style="margin:10px" src="images/logos/dt_group.png" alt="Design Thinkers Group" width="150">
-								</a>
-							</div>
-							<div class="row">
-								<a target="_blank" href="http://www.fundamig.org.br/">
-									<img style="margin: 10px" src="images/logos/fundamig.jpg" alt="Fundamig" width="150">
-								</a>
-								<a target="_blank" href="http://www.pickmeapp.com.br/">
-									<img style="margin: 10px" src="images/logos/pickmeapp.png" alt="PickMeApp" width="150">
-								</a>
-								<a target="_blank" href="https://www.facebook.com/mulheresquedecidemoficial/">
-									<img style="margin: 10px" src="images/logos/mulheresquedecidem.png" alt="Mulheres que Decidem" width="150">
-								</a>
-								<a target="_blank" href="http://www.take.net/">
-									<img style="margin: 10px" src="images/logos/takenet.jpg" alt="Takenet" width="150">
-								</a>
-							</div>
-							<div class="row">
-								<a target="_blank" href="http://www.fumsoft.org.br/">
-									<img style="margin: 10px" src="images/logos/fumsoft.png" alt="Fumsoft" width="150">
-								</a>
-								<a target="_blank" href="http://www.fumsoft.org.br/empreendedorismo/acelera-mg">
-									<img style="margin: 10px" src="images/logos/mgti.png" alt="MGTI" width="150">
-								</a>
-								<a target="_blank" href="http://www.simi.org.br/">
-									<img style="margin: 10px" src="images/logos/simi.png" alt="Simi" width="150">
-								</a>
-								<a target="_blank" href="http://www.cemais.org.br/">
-									<img style="margin: 10px" src="images/logos/cemais.jpg" alt="CeMais" width="150">
-								</a>
-							</div>
-							<div class="row">
-								<a target="_blank" href="http://efgbh.com.br/">
-									<img style="margin: 10px" src="images/logos/sebrae.png" alt="Escola Sebrae" width="150">
-								</a>
-								<a target="_blank" href="http://www.risu.com.br/">
-									<img style="margin: 10px" src="images/logos/risu.png" alt="Risü" width="150">
-								</a>
-								<a target="_blank" href="http://virturian.com/">
-									<img style="margin: 10px" src="images/logos/virturian.jpg" alt="Virturian" width="150">
-								</a>
-								<a target="_blank" href="http://www.grecodesign.com.br/">
-									<img style="margin: 10px" src="images/logos/greco_design.png" alt="Greco Design" width="150">
-								</a>
-							</div> -->
-							<!-- <div class="row">
-								<a target="_blank" href="parceriabaanko.pdf"><img src="images/demo/partners/logo-04.png" alt="Inclua seu negócio aqui!" width="150"></a>
-							</div> -->
-					</div>
-				</section>
-				<!--==========-->
 
 
+		</div>
 
-									<!--===============================-->
-									<!--== Contato ====================-->
-									<!--===============================-->
+	</div>
 
-									<section id="contato" class="row">
-										<div class="col-sm-12">
-											<div class="section-header text-center">
-												<h2>Entre em contato com a gente</h2>
-												<br>
-												<h4>Dúvidas sobre Baanko Challenge Beagá? <a href="mailto:challenge.beaga@baanko.com?subject=[Site] Dúvidas Baanko Challenge Beagá">challenge.beaga@baanko.com</a></h4>
-												<br>
-												<h4>Quer levar o Baanko Challenge para sua cidade? <a href="mailto:challenge@baanko.com?subject=[Site] Quero fazer um Baanko Challenge na minha cidade">challenge@baanko.com</a></h4>
-											</div>
+</footer>
 
-										</div>
-									</section>
 
-									<!--==========-->
+<!--== Javascript Files ==-->
 
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
+<script src="js/jquery-2.1.0.min.js"></script>
 
+<script src="js/bootstrap.min.js"></script>
 
+<script src="js/jquery.scrollTo.js"></script>
 
+<script src="js/jquery.nav.js"></script>
 
+<script src="js/owl.carousel.min.js"></script>
 
+<script src="js/jquery.flexslider.js"></script>
 
+<script src="js/jquery.accordion.js"></script>
 
+<script src="js/jquery.placeholder.js"></script>
 
+<script src="js/jquery.fitvids.js"></script>
 
+<script src="js/gmap3.js"></script>
 
+<script src="js/fancySelect.js"></script>
 
-									<div id="gotop" class="gotop fa fa-arrow-up"></div>
+<script src="js/main.js"></script>
 
-								</div>
+<script src="js/content.js"></script>
 
-							</div>
+</body>
 
-							<footer id="footer">
-
-								<div id="map_canvas"></div>
-
-
-								<div class="footer">
-
-									<div class="container box">
-
-
-										<section id="info" class="row">
-
-											<div class="col-sm-8">
-
-
-												<!--== Social Icons ==-->
-
-												<ul class="social-icons">
-
-													<li><a href="http://www.facebook.com/baankochallenge" class="fa fa-facebook"></a></li>
-
-													<li><a href="http://www.twitter.com/BaankoGroup" class="fa fa-twitter"></a></li>
-
-													<li><a href="https://plus.google.com/u/0/b/109869411851450088329/109869411851450088329/about" class="fa fa-google-plus"></a></li>
-
-													<li><a href="http://www.youtube.com/user/BaankoGroup" class="fa fa-youtube"></a></li>
-
-													<li><a href="http://instagram.com/baanko" class="fa fa-instagram"></a></li>
-
-													<!--<li><a href="#" class="fa fa-pinterest"></a></li>-->
-
-													<li><a href="http://www.linkedin.com/company/grupo-baanko" class="fa fa-linkedin"></a></li>
-
-												</ul>
-
-
-											</div>
-
-											<div class="col-sm-4 text-right">
-
-												<div class="copyrights">
-
-								All Rights Reserved. © 2017
-
-												</div>
-
-											</div>
-
-										</section>
-
-
-									</div>
-
-								</div>
-
-							</footer>
-
-
-							<!--== Javascript Files ==-->
-
-							<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
-							<script src="js/jquery-2.1.0.min.js"></script>
-
-							<script src="js/bootstrap.min.js"></script>
-
-							<script src="js/jquery.scrollTo.js"></script>
-
-							<script src="js/jquery.nav.js"></script>
-
-							<script src="js/owl.carousel.min.js"></script>
-
-							<script src="js/jquery.flexslider.js"></script>
-
-							<script src="js/jquery.accordion.js"></script>
-
-							<script src="js/jquery.placeholder.js"></script>
-
-							<script src="js/jquery.fitvids.js"></script>
-
-							<script src="js/gmap3.js"></script>
-
-							<script src="js/fancySelect.js"></script>
-
-							<script src="js/main.js"></script>
-
-
-						</body>
-
-						</html>
+</html>

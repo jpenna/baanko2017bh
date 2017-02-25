@@ -1,103 +1,61 @@
-firebase.database().ref().once('value').then(function(snapshot) {
-  const context = "bh2017";
-  const keys = {};
-  const companyGroups = ["Apoio", "Patrocinio", "Parceiros"];
+var context = "bh2017";
+var companyGroups = ["Apoio", "Patrocinio", "Parceiros"];
 
-  function addField(section, data) {
-    let template;
+function addField(name, data) {
 
-    if (companyGroups.indexOf(id) == -1) {
-      template = $('#personTemplate');
+  var template = $('#' + name + 'Template');
+  var section = $('#' + name + 'Section');
+
+  if (!data.esconder) {
+
+    if (companyGroups.indexOf(name) != -1) {
+      template
+      .clone()
+      .removeAttr('id')
+      .removeAttr('hidden')
+      .attr('href', data.link)
+      .children('img')
+      .attr('src', data.imagem)
+      .attr('alt', data.empresa)
+      .parent()
+      .prependTo(section);
     } else {
-      template = $('#companyTemplate');
+      template
+      .clone()
+      .removeAttr('id')
+      .removeAttr('hidden')
+      .find('img')
+      .attr('src', data.imagem)
+      .attr('alt', data.nome)
+      .attr('href', data.link).end()
+      .find('.fa-facebook')
+      .attr('href', data.facebook).end()
+      .find('.fa-linkedin')
+      .attr('href', data.linkedin).end()
+      .find('h3')
+      .text(data.nome).end()
+      .find('p')
+      .text(data.empresa).end()
+      .find('i')
+      .text(data.data).end()
+      .prependTo(section);
     }
-
-    const newTemplate = template
-    .clone()
-    .removeAttr('id')
-    .removeAttr('hidden')
-    .prependTo(tab);
-
-    if (data) {
-      newTemplate
-      .find('input[name=nome]').val(data.nome).end()
-      .find('input[name=empresa]').val(data.empresa).end()
-      .find('input[name=data]').val(data.data).end()
-      .find('input[name=imagem]').val(data.imagem).end()
-      .find('img').attr('src', data.imagem).end()
-      .find('input[name=link]').val(data.link).end()
-      .find('input[name=facebook]').val(data.facebook).end()
-      .find('input[name=linkedin]').val(data.linkedin).end()
-      .find('input[name=esconder]').attr('checked', data.esconder).end();
-    }
-
-    // const form = newTemplate.find('form');
-    // form.attr('id', `form${id}${key}`);
-    // form.on('submit', (e) => {
-    //   e.preventDefault();
-    //
-    //   var inputs = form.find('input');
-    //
-    //   var values = {};
-    //   inputs.each(function() {
-    //     values[this.name] = $(this).val();
-    //   });
-    //   values.esconder = form.find('input[name=esconder]').is(':checked');
-    //
-    //   const url = newTemplate.find('input[name=imagem]').val();
-    //   newTemplate.find('img').attr('src', url);
-    //
-    //   return firebase.database().ref(`/1/${id}/${key}`).set(values);
-    // });
   }
-
-  firebase.database().ref().once('value').then(function(snapshot) {
-    var content = snapshot.val();
-
-    const tabTemplate = $('#tabTemplate');
-    const contentTemplate = $('#contentTemplate');
-
-    content.forEach((obj, key) => {
-      if (key > 0) {
-        Object.keys(obj).forEach((name) => {
-          tabTemplate
-          .clone()
-          .removeAttr('id')
-          .removeAttr('hidden')
-          .children('a')
-          .attr('href', `#tabs${name}`)
-          .text(name)
-          .parent()
-          .insertBefore(tabTemplate);
-
-          const newContent = contentTemplate
-            .clone()
-            .removeAttr('hidden')
-            .attr('id', `tabs${name}`)
-            .insertBefore(contentTemplate);
-
-          obj[name].forEach((person, areaKey) => {
-            addField(newContent, name, areaKey, person);
-          });
-        });
-      }
-
-
-
-
-
-    })
-
-
-
-
-
-    $("#tabs").tabs();
-
-
-
-  });
-
-});
-
 }
+
+// Pega os dados do Firebase e popula
+firebase.database().ref().once('value').then(function(snapshot) {
+  var content = snapshot.val();
+
+  var contentTemplate = $('#contentTemplate');
+
+  content.forEach(function (obj, key) {
+    if (key > 0) {
+      Object.keys(obj).forEach(function (name) {
+        obj[name].forEach((data, areaKey) => {
+          addField(name, data);
+        });
+      });
+    }
+  });
+});
