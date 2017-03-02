@@ -17,7 +17,8 @@ $(document).ready(() => {
   function addField(tab, id, key, data) {
     let template, image;
 
-    keys[id] = key || ++keys[id];
+    keys[id] = ++keys[id] || 0;
+    key = key || keys[id];
 
     if (companyGroups.indexOf(id) == -1) {
       template = $('#personTemplate');
@@ -92,7 +93,7 @@ $(document).ready(() => {
             .insertBefore(contentTemplate);
 
           obj[name].forEach((person, areaKey) => {
-            addField(newContent, name, areaKey, person);
+            addField(newContent, name, +areaKey, person);
           });
         });
       }
