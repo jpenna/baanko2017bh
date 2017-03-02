@@ -52,6 +52,7 @@ firebase.database().ref().once('value').then(function(snapshot) {
   content.forEach(function (obj, key) {
     if (key > 0) {
       Object.keys(obj).forEach(function (name) {
+        obj[name].reverse();
         obj[name].forEach((data, areaKey) => {
           addField(name, data);
         });
